@@ -1,0 +1,18 @@
+\begin{table}
+    \centering
+    \caption{Atomic coordinates of water
+ (\AA ngstroms)}
+    \label{h2o}
+    \begin{tabular}{ c c c c }
+    \hline
+    \hline
+    Atomic & & & \\
+    Symbol & X & Y & Z \\
+    \hline
+	O & 0.0 & -0.14 & 0.0 \\
+	H & 1.64 & 1.14 & 0.0 \\
+	H & -1.64 & 1.14 & 0.0 \\
+    \hline
+    \hline
+    \end{tabular}
+\end{table}
