@@ -6,17 +6,21 @@ if __name__ == "__main__":
         fname = 'mol.xyz'
 
 xyz = []
-with open(fname,'r') as f: 
-    first_line = True
+with open(fname,'r') as f:  
+    next(f)
+    comment_line = True
     for line in f:
-        if first_line:
+        if comment_line:
             mname = str(line)
-            first_line = False
+            comment_line = False
         else:
-            (A,x,y,z) = line.split()
-            xyz.append([str(A),float(x),float(y),float(z)])
+            try:
+                (A,x,y,z) = line.split()
+                xyz.append([str(A),float(x),float(y),float(z)])
+            except:
+                print("Found unknown line: {}".format(line))
 
-with open('out.txt','a') as o:
+with open('out.txt','a+') as o:
     o.write("""\\begin{{table}}
     \\centering
     \\caption{{Atomic coordinates of {} (\\AA ngstroms)}}
